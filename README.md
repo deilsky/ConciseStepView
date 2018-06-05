@@ -68,7 +68,7 @@ ConciseStepView stepView = ConciseStepView.create().attach(scrollView)
         .stepViewWidth(360)
         .stepLineHeight(3)
         .stepTextSize(12)
-        .steps(data1).setOnStepClickListener(new ConciseStepView.OnStepClickListener() {
+        .steps(data).setOnStepClickListener(new ConciseStepView.OnStepClickListener() {
             @Override
             public void onStepClick(ConciseData data) {
                 Log.d("onStepClick", data.toString());
