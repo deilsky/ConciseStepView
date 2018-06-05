@@ -1,7 +1,7 @@
-# AwakeningView
+# ConciseStepView
 ## 一行链式代码，解决StepView
-![](Screenshot/Screenshot_20180605-111816.png)
-![](Screenshot/Screenshot_20180605-111833.png)
+![](Screenshots/Screenshot_20180605-111816.png)
+![](Screenshots/Screenshot_20180605-111833.png)
 
 # How to
 ## To get a Git project into your build:
@@ -18,7 +18,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-        implementation 'com.github.deilsky:ConciseStepView:v1.0'
+    implementation 'com.github.deilsky:ConciseStepView:v1.0'
 }
 ```
 ### Step3.Used
