@@ -18,7 +18,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.deilsky:ConciseStepView:v1.0'
+    implementation 'com.github.deilsky:ConciseStepView:v1.1'
 }
 ```
 ### Step3.Used
