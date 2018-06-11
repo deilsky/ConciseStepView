@@ -191,7 +191,7 @@ public class ConciseStepView {
     /**
      * 生成
      */
-    public void build() {
+    public ConciseStepView build() {
         ViewTreeObserver vto = mHorizontalScrollView.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -208,10 +208,11 @@ public class ConciseStepView {
                 initDefaults();
             }
         });
-
+        return this;
     }
 
-    private void initDefaults() {
+
+    private ConciseStepView initDefaults() {
         mLinearLayout.setBackgroundColor(Color.WHITE);
         int height = mHeight / 3 * 2;
 
@@ -285,6 +286,7 @@ public class ConciseStepView {
             stepLayout.setTag(i);
             mLinearLayout.addView(stepLayout);
         }
+        return this;
     }
 
     private void onDrawRight(boolean isFinish, View right, RelativeLayout.LayoutParams rightParams) {
@@ -303,6 +305,11 @@ public class ConciseStepView {
         drawableLayout.addView(left);
     }
 
+    public void update(ArrayList<ConciseData> datas) {
+        steps(datas);
+        mLinearLayout.removeAllViews();
+        initDefaults();
+    }
     private ConciseData findData(int index) {
         return mSteps.get(index);
     }

@@ -14,4 +14,10 @@
         android:id="@+id/stepView2"
         android:layout_width="match_parent"
         android:layout_height="60dp" />
+    <Button
+        android:id="@+id/update"
+        android:text="更新"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="50dp" />
 </LinearLayout>

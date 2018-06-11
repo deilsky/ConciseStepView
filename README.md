@@ -28,6 +28,12 @@ xml
         android:id="@+id/stepView"
         android:layout_width="match_parent"
         android:layout_height="60dp" />
+    <Button
+        android:id="@+id/update"
+        android:text="更新"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="50dp" />
 代码
 HorizontalScrollView scrollView = findViewById(R.id.stepView);
 private ArrayList<ConciseData> data = new ArrayList<ConciseData>();
@@ -76,6 +82,19 @@ ConciseStepView stepView = ConciseStepView.create().attach(scrollView)
             }
         });
 stepView.build();
+private int s = 1;//测试需要
+findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                s++;
+                if (s >= data.size()) {
+                    s = data.size() - 1;
+                }
+                data.get(s).setFinish(true);
+                stepView.update(data);
+            }
+        });
+
 ```
 
 [![](https://jitpack.io/v/deilsky/ConciseStepView.svg)](https://jitpack.io/#deilsky/ConciseStepView)

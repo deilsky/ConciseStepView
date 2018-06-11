@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ConciseStepView stepView1, stepView2;
     private ArrayList<ConciseData> data1 = new ArrayList<ConciseData>();
     private ArrayList<ConciseData> data2 = new ArrayList<ConciseData>();
+    private int s = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         scrollView1 = findViewById(R.id.stepView1);
         scrollView2 = findViewById(R.id.stepView2);
+        findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                s++;
+                if (s >= data2.size()) {
+                    s = data2.size() - 1;
+                }
+                data2.get(s).setFinish(true);
+                stepView2.update(data2);
+            }
+        });
 
         ConciseData conciseData;
         conciseData = new ConciseData();
